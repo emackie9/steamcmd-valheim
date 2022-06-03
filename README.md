@@ -16,5 +16,5 @@ Valheim server. Will update on restarts so should schedule restarts periodically
 | `VALHEIM_SERVER_SAV_DIR`| No | Default: `/valheim_backup`
 
 Server exposes ports:
-- 2456
-- 2457
+- 2456/udp
+- 2457/udp
