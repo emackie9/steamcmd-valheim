@@ -16,8 +16,8 @@ services:
       - valheim_server:/valheim
       - valheim_backup:/valheim_backup
     ports:
-      - 2456:2456
-      - 2457:2457
+      - 2456:2456/udp
+      - 2457:2457/udp
     restart:
       always
 
