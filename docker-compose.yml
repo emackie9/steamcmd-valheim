@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  steamcmd-valheim:
+    build:
+      context: .
+    image: steamcmd-valheim:latest
+    container_name: steamcmd-valheim
+    environment:
+      - VALHEIM_SERVER_PATH=${ECO_SERVER_PATH:-/valheim}
+    volumes:
+      - valheim_server:/valheim
+    # ports:
+    #   - 3000:3000
+    #   - 3001:3001
+
+volumes:
+  valheim_server:
+    name: valheim_server
+    driver: local

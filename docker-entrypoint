@@ -1,0 +1,8 @@
+#!/bin/bash
+
+steamcmd \
+    +force_install_dir $VALHEIM_SERVER_PATH \
+    +login $STEAMCMD_USER $STEAMCMD_PASS \
+    +app_update $STEAMCMD_ID validate \
+    +quit
+
