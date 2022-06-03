@@ -6,14 +6,25 @@ services:
     image: steamcmd-valheim:latest
     container_name: steamcmd-valheim
     environment:
-      - VALHEIM_SERVER_PATH=${ECO_SERVER_PATH:-/valheim}
+      - VALHEIM_SERVER_PATH=${VALHEIM_SERVER_PATH:-/valheim}
+      - VALHEIM_SERVER_SAV_DIR=${VALHEIM_SERVER_SAV_DIR:-/valheim_backup}
+      - VALHEIM_SERVER_NAME=${VALHEIM_SERVER_NAME:-My Server}
+      - VALHEIM_SERVER_WORLD=${VALHEIM_SERVER_WORLD:-Dedicated}
+      - VALHEIM_SERVER_PASS=${VALHEIM_SERVER_PASS:-secret}
+      - VALHEIM_SERVER_PUBLIC=${VALHEIM_SERVER_PUBLIC:-1}
     volumes:
       - valheim_server:/valheim
-    # ports:
-    #   - 3000:3000
-    #   - 3001:3001
+      - valheim_backup:/valheim_backup
+    ports:
+      - 2456:2456
+      - 2457:2457
+    restart:
+      always
 
 volumes:
   valheim_server:
     name: valheim_server
+    driver: local
+  valheim_backup:
+    name: valheim_backup
     driver: local
