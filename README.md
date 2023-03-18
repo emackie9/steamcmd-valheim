@@ -13,7 +13,7 @@ Valheim server. Will update on restarts so should schedule restarts periodically
 | `VALHEIM_SERVER_WORLD` | No | Default: `Dedicated`
 | `VALHEIM_SERVER_PASS`  | No | Default: `secret`
 | `VALHEIM_SERVER_PUBLIC`| No | Default: `1`
-| `VALHEIM_SERVER_SAV_DIR`| No | Default: `/valheim_backup`
+| `VALHEIM_SERVER_SAV_DIR`| No | Default: `/valheim_saves`
 
 Server exposes ports:
 - 2456/udp
