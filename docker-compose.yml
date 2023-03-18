@@ -7,14 +7,14 @@ services:
     container_name: steamcmd-valheim
     environment:
       - VALHEIM_SERVER_PATH=${VALHEIM_SERVER_PATH:-/valheim}
-      - VALHEIM_SERVER_SAV_DIR=${VALHEIM_SERVER_SAV_DIR:-/valheim_saves}
+      - VALHEIM_SERVER_SAV_DIR=${VALHEIM_SERVER_SAV_DIR:-/valheim_worlds}
       - VALHEIM_SERVER_NAME=${VALHEIM_SERVER_NAME:-My Server}
       - VALHEIM_SERVER_WORLD=${VALHEIM_SERVER_WORLD:-Dedicated}
       - VALHEIM_SERVER_PASS=${VALHEIM_SERVER_PASS:-secret}
       - VALHEIM_SERVER_PUBLIC=${VALHEIM_SERVER_PUBLIC:-1}
     volumes:
       - valheim_server:/valheim
-      - valheim_saves:/valheim_saves
+      - valheim_worlds:/valheim_worlds
     ports:
       - 2456:2456/udp
       - 2457:2457/udp
@@ -25,6 +25,6 @@ volumes:
   valheim_server:
     name: valheim_server
     driver: local
-  valheim_saves:
-    name: valheim_saves
+  valheim_worlds:
+    name: valheim_worlds
     driver: local
